@@ -1,0 +1,205 @@
+	QA Consulting 
+
+	Pre-Assessment Questions
+
+	Presented by: R.RAJU
+	To: QA Consultant
+
+Exercise 1: Define the following key Object Orientated Programming (OOP)
+principles with examples: 1) Encapsulation, 2) Inheritance, 3) Polymorphism, and 4) Abstraction
+
+----------------------------------------------------------------------------------------------------------
+
+1) Encapsulation
+
+Encapsulation in java is creating a code which put all data together into a single unit.
+it allows creation of classes in java by making them private and by using setters and getters 
+command we can set and get the data in the class. In public static void we can define a varible and
+call it but in private class it wouldnt. 
+
+Example of Encapsulation:
+
+Here is a simple code showing one of setter and one getter
+
+//Encapsualation in Java
+//Setter
+
+public class Cinema
+{
+	private Movie name;
+	
+//Class constructor
+	public Movie getName()
+	{
+	return name;
+	}
+	public void setName(Movie name)
+	{
+//This call refers to name in the function
+	this.name=name;
+	}
+
+}
+
+//Getter
+
+class Get
+{
+	public static void main(Movie[] args)
+	{
+	Cinema m=new Cinema();
+	m.setName("Alien");
+	
+	System.out.println(m.getName());
+	}
+
+}
+
+[Outputs: "Alien"]
+
+---------------------------------------------------------------------------------------------------------
+2) Inheritance
+
+Inheritance in java is the method of acquiring all the properties of one class to another. Suppose 
+Class A and B,Class A is the parent and Class B to be the Child. With Inheritance, Class B can aquire 
+all properties and behaviors of the parent class A. In java the idea behind Inheritance is that you 
+can create new classes that are built upon the existing classes. When a class inherit from an 
+existing class, you can use the methods of that class and add new methods too. Simply put it allows 
+code reusability and method overriding. There are different types of Inheritance, which are; 
+Single Type (class A and B), Multilevel Type (Class A, B and C), and Hierarchical Type 
+(2 Child classes and 1 Parent or 2 Parent classes and 1 Child).
+
+An example of a Single level Inheritance:
+
+ //Inheritance in java
+
+ class A {
+	void add() {System.out.printIn("adding..");}
+	}
+	class B extends A{
+	void sub(){System.out.printIn("subtracting..");}
+	}
+
+class Inheritance{
+
+	public static void main(String args[]){
+	B b=new B();
+	b.subracting();
+	b.adding();
+	}
+
+ }
+
+[Outputs: subtracting..
+	  adding..]
+
+---------------------------------------------------------------------------------------------------------
+
+
+3) Polymorphism
+ 
+Poly - many
+Morphism - behaviors 
+many behaviors
+
+A single action can be performed in different ways using polymorphism. 
+For example; lets say we have a class called Phone that has a method called ringtone().
+
+public class Phone{
+	public void ringtone(){
+	System.out.printIn("Phone is making a ringtone");
+	}
+}
+
+Now lets says, we have two different phone model: IPhone and HTC thats extends (inheritance) Phone class.
+We can implement the same method like this:
+
+public class IPhone extends Phone {
+	@Override
+	public void ringtones(){
+	System.out.println("Ring Ring");
+	
+}
+    public static void main(String args[]){
+    	Phone obj = new IPhone();
+    	obj.ringtone();
+    }
+}
+[output: Ring Ring]
+and
+public class HTC extends Phone {
+	@Override
+	public void ringtones(){
+	System.out.println("Riinng");
+	
+}
+    public static void main(String args[]){
+    	Phone obj = new HTC();
+    	obj.ringtone();
+    }
+}
+[Output: Riinng]  //overriding example
+Although it have common action for all subclasses called ringtone(), there were different ways to do
+the same action. Different phones have different features and ringtones can be different as well,
+it would not make any sense to just call the generic ringtone() method as mentioned each phone
+has different features and ringtones. There are few types of polymorphism, these are: Method Overloading, and
+Method Overriding
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+4) Abstraction
+
+It is a process of hiding all but the relevant data to increase efficiency and reduce complexity. 
+Abstraction in java can be achieved by using classes such as interface or abstract.
+ 
+Example
+
+public abstract class Colleague {
+private String name;
+private String address;
+private int number;
+
+	public Colleague(String Name, String address, int number) {
+	System.out.println("Colleague details");
+	this.name = name;
+	this.address = address;
+	this.number = number;
+}
+
+	public String getName() {
+	return name;
+	}
+	public void setAddress(String newAddress) {
+	address = newAddress;
+	}
+	...many public entries
+}
+
+To make the above code simple:
+
+public class AbstractClass {
+
+   public static void main(String [] args) {
+      Salary s = new Salary("Bill", 20000);
+      Colleague e = new Colleague("Bill N.", "London, SW", 4);
+      System.out.println("\n Call mailCheck using Colleague reference--");
+      e.mailCheck();
+   }
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
